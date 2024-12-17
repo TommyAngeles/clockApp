@@ -1007,7 +1007,7 @@ body {
   }
   .stopwatch-page__time {
     font-size: 60px;
-    margin-top: 100px;
+    margin-top: 70px;
     height: auto;
   }
   .stopwatch-page__display-circle-time {
@@ -1038,14 +1038,25 @@ body {
   }
   .intervals__interval {
     width: 380px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -ms-flex-negative: 0;
         flex-shrink: 0;
   }
   .intervals__circle {
     font-size: 14px;
+    margin-right: 20px;
   }
   .intervals__circle-time {
     font-size: 14px;
+    margin-right: 20px;
   }
   .intervals__total-time {
     font-size: 14px;
