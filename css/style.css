@@ -1052,19 +1052,19 @@ body {
         flex-shrink: 0;
   }
   .intervals__circle {
-    width: 40px;
+    width: 50px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
   .intervals__circle-time {
     width: 100px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
   .intervals__total-time {
     width: 100px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
   }
   .timer-page__timer {
     font-size: 80px;
