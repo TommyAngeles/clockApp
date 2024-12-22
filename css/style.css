@@ -924,6 +924,7 @@ body {
   .world-time-page__button1 {
     width: 50px;
     height: 50px;
+    margin-right: 10px;
   }
   .world-time-page__button2 {
     width: 50px;
@@ -979,7 +980,7 @@ body {
     font-size: 24px;
   }
   .world-time-page__zones {
-    height: 340px;
+    height: 560px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -998,13 +999,13 @@ body {
     padding: 20px;
   }
   .zone__city {
-    font-size: 26px;
+    font-size: 24px;
   }
   .zone__time-zone {
     font-size: 16px;
   }
   .zone__time {
-    font-size: 30px;
+    font-size: 32px;
   }
   .stopwatch-page__time {
     font-size: 60px;
@@ -1086,15 +1087,16 @@ body {
   }
   .nav {
     width: 100%;
-    min-height: 60px;
+    height: 60px;
   }
   .nav__button {
     width: 127px;
-    height: 48px;
+    height: 50px;
     font-size: 22px;
     text-align: center;
     line-height: 18px;
     margin-right: 4px;
+    border-radius: 15px;
   }
   .nav__button:last-child {
     margin-right: 0;
