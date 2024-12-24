@@ -269,33 +269,59 @@ timeFormatButton.addEventListener('click', () => {
     localStorage.setItem('format', JSON.stringify(timeFormat));
 });
 
-
 // языки
-const changeLanguageButton = document.querySelector('#language-button');
 export let userLanguage = 'RU';
 if(JSON.parse(localStorage.getItem('lang')) === 'RU') {
     userLanguage = 'RU';
-    changeLanguageButton.textContent = 'Русский';
 } else {
     userLanguage = 'EN';
-    changeLanguageButton.textContent = 'English';
 }
+
+const changeLanguageButton = document.querySelector('#language-button');
+function changeSettingsLanguage() {
+    const settingsText = document.querySelectorAll('.setting__text');
+    const title = document.querySelector('.settings-page__title');
+    if(userLanguage === 'EN') {
+        for(let i = 0; i < settingsText.length; i++) {
+            settingsText[0].textContent = 'Night mode';
+            settingsText[1].textContent = 'Time format';
+            settingsText[2].textContent = 'Language';
+        }
+        title.textContent = 'Settings';
+        changeLanguageButton.textContent = 'English';
+        if(timeFormat === 24) {
+            timeFormatButton.textContent = '24 hour'
+        } else {
+            timeFormatButton.textContent = '12 hour'
+        }
+    } else {
+        for(let i = 0; i < settingsText.length; i++) {
+            settingsText[0].textContent = 'Ночной режим';
+            settingsText[1].textContent = 'Формат времени';
+            settingsText[2].textContent = 'Язык';
+        }
+        title.textContent = 'Настройки';
+        changeLanguageButton.textContent = 'Русский';
+        if(timeFormat === 24) {
+            timeFormatButton.textContent = '24 часовой'
+        } else {
+            timeFormatButton.textContent = '12 часовой'
+        }
+    }
+}
+
+changeSettingsLanguage();
 
 changeLanguageButton.addEventListener('click', () => {
     if(userLanguage === 'RU') {
         userLanguage = 'EN';
-        // дефолтный город
-        changeLanguageButton.textContent = 'English';
     } else {
         userLanguage = 'RU';
-        // дефолтный город
-        changeLanguageButton.textContent = 'Русский';
     }
     localStorage.setItem('lang', JSON.stringify(userLanguage));
     displaySystemCity();
     updateLanguage();
     changeNavLanguage();
     updateStopwatchLanguage();
+    changeSettingsLanguage();
 });
-
-
