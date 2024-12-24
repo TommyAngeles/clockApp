@@ -252,22 +252,9 @@ export const timeFormatButton = document.querySelector('#time-format');
 export let timeFormat = 24;
 if (JSON.parse(localStorage.getItem('format')) === 24 || !JSON.parse(localStorage.getItem('format'))) {
     timeFormat = 24;
-    timeFormatButton.textContent = '24 часовой';
 } else {
     timeFormat = 12;
-    timeFormatButton.textContent = '12 часовой';
 }
-
-timeFormatButton.addEventListener('click', () => {
-    if(timeFormat === 24) {
-        timeFormat = 12;
-        timeFormatButton.textContent = '12 часовой';
-    } else {
-        timeFormat = 24;
-        timeFormatButton.textContent = '24 часовой';
-    }
-    localStorage.setItem('format', JSON.stringify(timeFormat));
-});
 
 // языки
 export let userLanguage = 'RU';
@@ -311,6 +298,28 @@ function changeSettingsLanguage() {
 }
 
 changeSettingsLanguage();
+
+
+timeFormatButton.addEventListener('click', () => {
+    if(userLanguage === 'EN') {
+        if(timeFormat === 24) {
+            timeFormat = 12;
+            timeFormatButton.textContent = '12 hour';
+        } else {
+            timeFormat = 24;
+            timeFormatButton.textContent = '24 hour';
+        }
+    } else {
+        if(timeFormat === 24) {
+            timeFormat = 12;
+            timeFormatButton.textContent = '12 часовой';
+        } else {
+            timeFormat = 24;
+            timeFormatButton.textContent = '24 часовой';
+        }
+    }
+    localStorage.setItem('format', JSON.stringify(timeFormat));
+});
 
 changeLanguageButton.addEventListener('click', () => {
     if(userLanguage === 'RU') {
